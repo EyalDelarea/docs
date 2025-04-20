@@ -7,6 +7,7 @@ pool:
 
 variables:
   GOBIN:  '$(system.defaultWorkingDirectory)/bin' # Go binaries path
+  JFROG_CLI_LOG_LEVEL: DEBUG
 
 steps:
 - task: JfrogCliV2@1
