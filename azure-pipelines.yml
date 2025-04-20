@@ -1,0 +1,14 @@
+# Go
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  GOBIN:  '$(system.defaultWorkingDirectory)/bin' # Go binaries path
+
+steps:
+- task: JfrogCliV2@1
+  inputs:
+    command: 'jf rt ping'
