@@ -12,5 +12,5 @@ variables:
 steps:
 - task: JfrogCliV2@1
   inputs:
-    jfrogPlatformConnection: 'Jfrog-oidc'
+    jfrogPlatformConnection: 'azure-oidc'
     command: 'jf rt ping'
