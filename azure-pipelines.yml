@@ -11,6 +11,12 @@ variables:
 
 steps:
 - task: JfrogCliV2@1
+  name: jfStep
   inputs:
     jfrogPlatformConnection: 'azure-oidc'
     command: 'jf rt ping'
+
+- script: |
+    echo "The OIDC user is: $(jfStep.oidc_user)"
+    echo "The OIDC token is is: $(jfStep.oidc_token)"
+  displayName: "Echo the OIDC User"
