@@ -16,7 +16,10 @@ steps:
     jfrogPlatformConnection: 'azure-oidc'
     command: 'jf rt ping'
 
-- script: |
-    echo "The OIDC user is: $(jfStep.oidc_user)"
-    echo "The OIDC token is is: $(jfStep.oidc_token)"
-  displayName: "Echo the OIDC User"
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+        echo "Message variable is $(oidc_user)."
+        echo "Message env variable is $env:oidc_user."
+  displayName: 'Read variable'
